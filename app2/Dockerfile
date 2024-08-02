@@ -1,7 +1,5 @@
-FROM python:3
-COPY ./req.txt /requirements.txt
-WORKDIR /
-RUN pip install -r requirements.txt
-COPY . /
-ENTRYPOINT [ "python3" ]
-CMD [ "app2.py" ]
+FROM nginx
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+RUN mkdir -p /var/www/html/ && echo "Esto es la App2" >/var/www/html/index.html
+

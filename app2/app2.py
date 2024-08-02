@@ -1,8 +1,8 @@
-from flask import request, Flask
-import json
-app1 = Flask(__name__)
-@app1.route('/')
-def hello_world():
-return 'This is App2 :) '
-if __name__ == '__main__':
-app1.run(debug=True, host='0.0.0.0')
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def app2():
+    return 'Hello, app2!'
